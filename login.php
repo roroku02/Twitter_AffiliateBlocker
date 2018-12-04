@@ -5,7 +5,7 @@
  
     $ConsumerKey = "m8fmmQGoGbRpooxPGwgGg";
     $ConsumerSecret = "Llbr5TBIL0VcxZNS4jcIGXOq3qelCADnthYfjUeUQs";
-    $Callback_URL = "http://localhost/twitter_01/callback.php";
+    $Callback_URL = "http://localhost/Twitter_AffiliateBlocker/callback.php";
 
     $connection = new TwitterOAuth($ConsumerKey,$ConsumerSecret);
 
