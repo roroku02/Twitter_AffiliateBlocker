@@ -28,7 +28,7 @@
     }
 
     //抽出ワードリスト
-    $block_words = ["稼ぐ","企業","投資","月収","年収","収入","勝手にお金"];
+    $block_words = ["稼ぐ","起業","投資","月収","年収","収入","勝手にお金"];
     
     //ユーザ抽出
     for($user_count = 0;$user_count < count($f_user['name']);$user_count++){
