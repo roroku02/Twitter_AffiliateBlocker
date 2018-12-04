@@ -13,6 +13,12 @@
 
     $connection = new TwitterOAuth($ConsumerKey,$ConsumerSecret,$AccessToken['oauth_token'],$AccessToken['oauth_token_secret']);
 
+    function user_block($block_list,$connection){
+        foreach($block_list as $block_user){
+            $block_res[] = $connection -> post('blocks/create',array('screen_name' => $block_user));
+        }
+    }
+
     //ユーザ情報を取得
     $user_profile_info = $connection -> get('account/verify_credentials');
     $user_name = $user_profile_info -> {'screen_name'};
@@ -20,7 +26,6 @@
 
     //フォロワーを取得
     $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 100));
-    //print_r($follower_list);
     foreach($follower_list -> {"users"} as $f){
         $f_user{'name'}[] = $f -> {"name"};
         $f_user{'screen_name'}[] = $f -> {"screen_name"};
@@ -62,8 +67,10 @@
             }
             echo '</table>';
             echo '<br /><br />';
-            echo '以下のボタンを押すと一括でブロックします（API制限に注意してください）';
-            echo '<button>一括ブロック</block>';
+            echo '<p>以下のボタンを押すと一括でブロックします（API制限に注意してください）</p>';
+            ?>
+            <input type="button" name="block_button" id="block_button" value="一括ブロック" onclick="document.write('<?php user_block($block_user['screen_name'],$connection); ?>')">
+            <?php
         }else{
             echo "<p>あなたのアカウントのフォロワーからアフィリエイトアカウントとみられるユーザは発見できませんでした<p>";
         }
