@@ -19,7 +19,7 @@
     $user_id = $user_profile_info -> {'id'};
 
     //フォロワーを取得
-    $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 10));
+    $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 100));
     //print_r($follower_list);
     foreach($follower_list -> {"users"} as $f){
         $f_user{'name'}[] = $f -> {"name"};
