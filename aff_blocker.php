@@ -56,11 +56,14 @@
     <?php
         if(isset($block_user{'name'}[0])){
             echo "<p>あなたのアカウントのフォロワーから以下の通りアフィリエイトアカウントとみられるユーザを発見しました</p>";
-            echo '<table border="1" class="t_user"><tr><th>ユーザ名</th><th>ユーザID</th><th>プロフィール</th></tr>';
+            echo '<table border="1" class="t_user"><tr><th id = "name">ユーザ名</th><th id ="id">ユーザID</th><th id = "des">プロフィール</th></tr>';
             for($i = 0;$i < count($block_user['name']);$i++){
                 echo "<tr><td>".$block_user['name'][$i]."</td><td>".$block_user['screen_name'][$i]."</td><td>".$block_user['description'][$i]."</td></tr>";
             }
             echo '</table>';
+            echo '<br /><br />';
+            echo '以下のボタンを押すと一括でブロックします（API制限に注意してください）';
+            echo '<button>一括ブロック</block>';
         }else{
             echo "<p>あなたのアカウントのフォロワーからアフィリエイトアカウントとみられるユーザは発見できませんでした<p>";
         }

@@ -6,3 +6,7 @@ body {
 .t_user {
     width: 760px;
 }
+
+.t_user #name {
+    width: 100px;
+}
