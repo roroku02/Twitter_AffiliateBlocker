@@ -6,10 +6,22 @@ body {
 .t_user {
     width: 760px;
     margin: 20px auto;
+    border-radius: 8px;
 }
 
 .t_user #name {
     width: 100px;
+}
+
+.t_user {
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.t_user th , td {
+    border: 1px solid black;
+    padding: 15px;
 }
 
 p {
@@ -19,4 +31,9 @@ p {
 #block_button {
     display: flex;
     margin: 0 auto;
+}
+
+.result {
+    display: none;
+    text-align: center;
 }
