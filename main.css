@@ -30,10 +30,34 @@ p {
 
 #block_button {
     display: flex;
-    margin: 0 auto;
+    margin: 40px auto;
+    font-size: 2em;
+    text-decoration: none;
+    border: 10px solid lightblue;
+    background-color: white;
+    padding: 20px;
+    border-radius: 100px;
+}
+
+#block_button:hover {
+    background-color: lightgray;
+    transition: .5s;
 }
 
 .result {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 20em;
+    height: 5em;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px;
     text-align: center;
+    color: red;
+    border: 10px solid orange;
 }

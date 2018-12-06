@@ -16,7 +16,8 @@
     function user_block($block_list,$connection){
         foreach($block_list as $block_user){
             //$block_res[] = $connection -> post('blocks/create',array('screen_name' => $block_user));
-        }    
+        }
+        //echo "<p>ブロックしました</p>";
     }
 
     //ユーザ情報を取得
@@ -61,21 +62,26 @@
     <?php
         if(isset($block_user{'name'}[0])){
             echo "<p>あなたのアカウントのフォロワーから以下の通りアフィリエイトアカウントとみられるユーザを発見しました</p>";
+
+            //テーブル生成
             echo '<table class="t_user"><tr><th id = "name">ユーザ名</th><th id ="id">ユーザID</th><th id = "des">プロフィール</th></tr>';
             for($i = 0;$i < count($block_user['name']);$i++){
                 echo "<tr><td>".$block_user['name'][$i]."</td><td>".$block_user['screen_name'][$i]."</td><td>".$block_user['description'][$i]."</td></tr>";
             }
             echo '</table>';
             echo '<br /><br />';
+
+            //ブロックボタン
             echo '<p>以下のボタンを押すと一括でブロックします（API制限に注意してください）</p>';
             ?>
-            <input type="button" name="block_button" id="block_button" value="一括ブロック" onclick="document.getElementsByClassName('result').innerHTML = '<?php user_block($block_user['screen_name'],$connection); ?>'">
+            <input type="button" name="block_button" id="block_button" value="一括ブロック" onclick="document.getElementsByClassName('result').innerHTML = '<?php user_block($block_user['screen_name'],$connection); ?>';document.getElementById('result').style.display='block';">
             <?php
         }else{
+            //発見ユーザ無し
             echo "<p>あなたのアカウントのフォロワーからアフィリエイトアカウントとみられるユーザは発見できませんでした<p>";
         }
     ?>
-    <div class="result">
+    <div class="result" id="result">
         <h1>ブロックしました</h1>
     </div>
 </body>
