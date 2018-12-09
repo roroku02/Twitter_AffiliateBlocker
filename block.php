@@ -13,12 +13,12 @@
 
     $connection = new TwitterOAuth($ConsumerKey,$ConsumerSecret,$AccessToken['oauth_token'],$AccessToken['oauth_token_secret']);
 
-
-$block_users[] = $_POST["block_user"];
-print_r($block_users);
-/*foreach($block_users as $block_user){
-    $block_res[] = $connection -> post("blocks/create", array("screen_name" => $block_user));
-}*/
+if($_POST['flag'] == 1){
+    $block_users = $_SESSION["block_user"];
+    foreach($block_users as $block_user){
+        $block_res[] = $connection -> post("blocks/create", array("screen_name" => $block_user));
+    }
+}
 
 ?>
 
@@ -30,18 +30,24 @@ print_r($block_users);
     <title>ブロック完了</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
 </head>
 <body>
     <div class="result">
         <p>ブロックは正常に完了しました</p>
-        <p>ブロックしたユーザ▼</p>
+        <p>▼ブロックしたユーザ▼</p>
         <ul>
-            <?php //foreach $block_res as $user {
-                //echo '<li>'.$user["name"]."</li>";
-            //}
+            <?php
+            //テーブル生成
+            echo '<table class="t_user"><tr><th id = "name">ユーザ名</th><th id ="id">ユーザID</th><th id = "des">プロフィール</th></tr>';
+            for($i = 0;$i < count($block_res);$i++){
+                echo "<tr><td>".$block_res[$i]->{'name'}."</td><td>".$block_res[$i]->{'screen_name'}."</td><td>".$block_res[$i]->{'description'}."</td></tr>";
+            }
+            echo '</table>';
             ?>
         </ul>
+    <a href="aff_blocker.php">トップページ</a>
+    <br><br>
+    <a href="./logout">ログアウト（推奨）</a>
     </div>
 </body>
 </html>

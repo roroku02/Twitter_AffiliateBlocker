@@ -1,6 +1,6 @@
-body {
+.main_container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 .t_user {
@@ -56,8 +56,7 @@ p {
     transition: .5s;
 }
 
-.result, .no-user {
-    display: none;
+.no-user {
     position: fixed;
     top: 0;
     left: 0;
@@ -72,11 +71,13 @@ p {
     text-align: center;
     color: red;
     border: 10px solid orange;
-}
-
-.no-user {
     display: flex;
     width: auto;
     max-width: 1000px;
     font-weight: bold;
+}
+
+.result {
+    text-align: center;
+    margin: 10px auto;
 }

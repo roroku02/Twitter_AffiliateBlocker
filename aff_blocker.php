@@ -20,14 +20,14 @@
         }
         //echo "<p>ブロックしました</p>";
     }*/
-
+    unset($_SESSION['block_user']);
     //ユーザ情報を取得
     $user_profile_info = $connection -> get('account/verify_credentials');
     $user_name = $user_profile_info -> {'screen_name'};
     $user_id = $user_profile_info -> {'id'};
 
     //フォロワーを取得
-    $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 1));
+    $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 100));
     foreach($follower_list -> {"users"} as $f){
         $f_user{'name'}[] = $f -> {"name"};
         $f_user{'screen_name'}[] = $f -> {"screen_name"};
@@ -60,6 +60,7 @@
     <script src="main.js"></script>
 </head>
 <body>
+    <div class="main_container">
     <?php
         if(isset($block_user{'name'}[0])){
             echo "<p>あなたのアカウントのフォロワーから以下の通りアフィリエイトアカウントとみられるユーザを発見しました</p>";
@@ -74,9 +75,11 @@
 
             //ブロックボタン
             echo '<p>以下のボタンを押すと一括でブロックします（API制限に注意してください）</p>';
+            $_SESSION['block_user'] = $block_user['screen_name'];
             ?>
             <form action="block.php" method="post">
-                <input type="submit" name="block_user[]" id="block_button" value="一括ブロック">
+                <input type="hidden" name="flag" value="1">
+                <input type="submit" id="block_button" value="一括ブロック">
             </form>
             <?php
         }else{
@@ -84,8 +87,6 @@
             echo "<div class='no-user'><p>あなたのアカウントのフォロワーからアフィリエイトアカウントとみられるユーザは発見できませんでした</p></div>";
         }
     ?>
-    <div class="result" id="result">
-        <h1>ブロックしました</h1>
     </div>
 </body>
 </html>
