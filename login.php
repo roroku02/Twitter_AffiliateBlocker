@@ -3,8 +3,8 @@
     require_once('./twitteroauth/autoload.php');
     use Abraham\TwitterOAuth\TwitterOAuth;
  
-    $ConsumerKey = "m8fmmQGoGbRpooxPGwgGg";
-    $ConsumerSecret = "Llbr5TBIL0VcxZNS4jcIGXOq3qelCADnthYfjUeUQs";
+    $ConsumerKey = "0J9607H2YzUFGZmChwg1svR0z";
+    $ConsumerSecret = "rHoVNb62FwdePqaDKHNnAMIERnjDaPxz6ZTTpdKUUl2s7NNmiU";
     $Callback_URL = "http://localhost/Twitter_AffiliateBlocker/callback.php";
 
     $connection = new TwitterOAuth($ConsumerKey,$ConsumerSecret);

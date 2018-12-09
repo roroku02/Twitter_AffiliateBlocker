@@ -24,6 +24,18 @@ body {
     padding: 15px;
 }
 
+.t_user th {
+    background-color: aquamarine;
+}
+
+.t_user tr:nth-child(2n) {
+    background-color: rgba(183, 252, 229, 0.301);
+}
+
+.t_user tr:nth-child(2n+1) {
+    background-color: rgba(189, 234, 255, 0.205);
+}
+
 p {
     text-align: center;
 }
@@ -44,7 +56,7 @@ p {
     transition: .5s;
 }
 
-.result {
+.result, .no-user {
     display: none;
     position: fixed;
     top: 0;
@@ -60,4 +72,11 @@ p {
     text-align: center;
     color: red;
     border: 10px solid orange;
+}
+
+.no-user {
+    display: flex;
+    width: auto;
+    max-width: 1000px;
+    font-weight: bold;
 }

@@ -7,18 +7,19 @@
 
     use Abraham\TwitterOAuth\TwitterOAuth;
 
-    $ConsumerKey = "m8fmmQGoGbRpooxPGwgGg";
-    $ConsumerSecret = "Llbr5TBIL0VcxZNS4jcIGXOq3qelCADnthYfjUeUQs";
+    $ConsumerKey = "0J9607H2YzUFGZmChwg1svR0z";
+    $ConsumerSecret = "rHoVNb62FwdePqaDKHNnAMIERnjDaPxz6ZTTpdKUUl2s7NNmiU";
     $AccessToken = $_SESSION['access_token'];
 
     $connection = new TwitterOAuth($ConsumerKey,$ConsumerSecret,$AccessToken['oauth_token'],$AccessToken['oauth_token_secret']);
 
-    function user_block($block_list,$connection){
+    /*function user_block($block_list,$connection){
         foreach($block_list as $block_user){
+            sleep(1);
             //$block_res[] = $connection -> post('blocks/create',array('screen_name' => $block_user));
         }
         //echo "<p>ブロックしました</p>";
-    }
+    }*/
 
     //ユーザ情報を取得
     $user_profile_info = $connection -> get('account/verify_credentials');
@@ -26,7 +27,7 @@
     $user_id = $user_profile_info -> {'id'};
 
     //フォロワーを取得
-    $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 100));
+    $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 1));
     foreach($follower_list -> {"users"} as $f){
         $f_user{'name'}[] = $f -> {"name"};
         $f_user{'screen_name'}[] = $f -> {"screen_name"};
@@ -74,11 +75,13 @@
             //ブロックボタン
             echo '<p>以下のボタンを押すと一括でブロックします（API制限に注意してください）</p>';
             ?>
-            <input type="button" name="block_button" id="block_button" value="一括ブロック" onclick="document.getElementsByClassName('result').innerHTML = '<?php user_block($block_user['screen_name'],$connection); ?>';document.getElementById('result').style.display='block';">
+            <form action="block.php" method="post">
+                <input type="submit" name="block_user[]" id="block_button" value="一括ブロック">
+            </form>
             <?php
         }else{
             //発見ユーザ無し
-            echo "<p>あなたのアカウントのフォロワーからアフィリエイトアカウントとみられるユーザは発見できませんでした<p>";
+            echo "<div class='no-user'><p>あなたのアカウントのフォロワーからアフィリエイトアカウントとみられるユーザは発見できませんでした</p></div>";
         }
     ?>
     <div class="result" id="result">
