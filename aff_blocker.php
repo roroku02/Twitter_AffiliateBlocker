@@ -13,13 +13,6 @@
 
     $connection = new TwitterOAuth($ConsumerKey,$ConsumerSecret,$AccessToken['oauth_token'],$AccessToken['oauth_token_secret']);
 
-    /*function user_block($block_list,$connection){
-        foreach($block_list as $block_user){
-            sleep(1);
-            //$block_res[] = $connection -> post('blocks/create',array('screen_name' => $block_user));
-        }
-        //echo "<p>ブロックしました</p>";
-    }*/
     unset($_SESSION['block_user']);
     //ユーザ情報を取得
     $user_profile_info = $connection -> get('account/verify_credentials');
