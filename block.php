@@ -27,7 +27,7 @@ if($_POST['flag'] == 1){
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ブロック完了</title>
+    <title>ブロック結果</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
@@ -40,7 +40,7 @@ if($_POST['flag'] == 1){
             //テーブル生成
             echo '<table class="t_user"><tr><th id = "name">ユーザ名</th><th id ="id">ユーザID</th><th id = "des">プロフィール</th></tr>';
             for($i = 0;$i < count($block_res);$i++){
-                echo "<tr><td>".$block_res[$i]->{'name'}."</td><td>".$block_res[$i]->{'screen_name'}."</td><td>".$block_res[$i]->{'description'}."</td></tr>";
+                echo "<tr><td>".$block_res[$i]->{'name'}."</td><td>@".$block_res[$i]->{'screen_name'}."</td><td>".$block_res[$i]->{'description'}."</td></tr>";
             }
             echo '</table>';
             ?>

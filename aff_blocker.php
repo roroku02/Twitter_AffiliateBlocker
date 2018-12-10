@@ -47,7 +47,20 @@
             }
         }
     }
-?>
+
+    //重複削除
+    for($i = 1;$i < count($block_user['name']);$i++){
+        if($block_user['name'][$i-1] == $block_user['name'][$i]){
+            unset($block_user['name'][$i-1]);
+            unset($block_user['screen_name'][$i-1]);
+            unset($block_user['description'][$i-1]);
+        }
+    }
+    $block_user['name'] = array_values($block_user['name']);
+    $block_user['screen_name'] = array_values($block_user['screen_name']);
+    $block_user['description'] = array_values($block_user['description']);
+
+    ?>
 
 <!DOCTYPE html>
 <html>
@@ -68,7 +81,7 @@
             //テーブル生成
             echo '<table class="t_user"><tr><th id = "name">ユーザ名</th><th id ="id">ユーザID</th><th id = "des">プロフィール</th></tr>';
             for($i = 0;$i < count($block_user['name']);$i++){
-                echo "<tr><td>".$block_user['name'][$i]."</td><td>".$block_user['screen_name'][$i]."</td><td>".$block_user['description'][$i]."</td></tr>";
+                echo "<tr><td>".$block_user['name'][$i]."</td><td>@".$block_user['screen_name'][$i]."</td><td>".$block_user['description'][$i]."</td></tr>";
             }
             echo '</table>';
             echo '<br /><br />';
