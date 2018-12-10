@@ -1,3 +1,13 @@
+.login {
+    margin: 50px auto;
+    max-width: 1000px;
+}
+
+.login h1, .login a {
+    text-align: center;
+    margin: 0 auto;
+}
+
 .main_container {
     max-width: 1000px;
     margin: 30px auto;

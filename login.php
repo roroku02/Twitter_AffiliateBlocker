@@ -5,7 +5,7 @@
  
     $ConsumerKey = "0J9607H2YzUFGZmChwg1svR0z";
     $ConsumerSecret = "rHoVNb62FwdePqaDKHNnAMIERnjDaPxz6ZTTpdKUUl2s7NNmiU";
-    $Callback_URL = "http://localhost/Twitter_AffiliateBlocker/callback.php";
+    $Callback_URL = "http://www.roroku.shop/Twitter_AffiliateBlocker/callback.php";
 
     $connection = new TwitterOAuth($ConsumerKey,$ConsumerSecret);
 
@@ -23,11 +23,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-<h1>Welcome</h1>
-<p>ログイン画面に移動</p>
-    <a href="<?php echo $Url; ?>">Login</a>
+    <div class ="login">
+        <h1>Welcome</h1>
+        <p>ログイン画面に移動してください</p>
+        <a href="<?php echo $Url; ?>">Login</a>
+    </div>
 </body>
 </html>
