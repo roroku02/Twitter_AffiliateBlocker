@@ -20,7 +20,7 @@
     $user_id = $user_profile_info -> {'id'};
 
     //フォロワーを取得
-    $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 100));
+    $follower_list = $connection -> get('followers/list',array('user_id' => $user_id,'count' => 200));
     foreach($follower_list -> {"users"} as $f){
         $f_user{'name'}[] = $f -> {"name"};
         $f_user{'screen_name'}[] = $f -> {"screen_name"};
@@ -28,7 +28,7 @@
     }
 
     //抽出ワードリスト
-    $block_words = ["稼ぐ","起業","投資","月収","年収","収入","勝手にお金"];
+    $block_words = ["稼ぐ","起業","投資","月収","年収","収入","勝手にお金","副業","ハイローオーストラリア","バイオプ"];
     
     //ユーザ抽出
     for($user_count = 0;$user_count < count($f_user['name']);$user_count++){
