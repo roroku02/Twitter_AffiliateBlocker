@@ -122,6 +122,8 @@ p {
     width: auto;
     max-width: 1000px;
     font-weight: bold;
+    align-items: center;
+    justify-content: center;
 }
 
 .result {
