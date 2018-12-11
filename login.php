@@ -26,12 +26,23 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body class="login_body">
-    <div class ="login">
+    <section class ="login">
         <div class="login_container">
             <h1>Affiliate Blocker</h1>
             <p>Twitter IDでログインしてください</p>
             <a href="<?php echo $Url; ?>">Login</a>
         </div>
-    </div>
+    </section>
+    <section class="log">
+        <div class="container">
+            <h2>更新履歴</h2>
+            <div class="scroll-box">
+                <ul>
+                    <li>2018-12-10:ページ公開</li>
+                    <li>2018-12-11:ログインページをリニューアル</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
