@@ -25,11 +25,13 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
-<body>
+<body class="login_body">
     <div class ="login">
-        <h1>Welcome</h1>
-        <p>ログイン画面に移動してください</p>
-        <a href="<?php echo $Url; ?>">Login</a>
+        <div class="login_container">
+            <h1>Affiliate Blocker</h1>
+            <p>Twitter IDでログインしてください</p>
+            <a href="<?php echo $Url; ?>">Login</a>
+        </div>
     </div>
 </body>
 </html>
