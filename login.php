@@ -5,7 +5,7 @@
  
     $ConsumerKey = "0J9607H2YzUFGZmChwg1svR0z";
     $ConsumerSecret = "rHoVNb62FwdePqaDKHNnAMIERnjDaPxz6ZTTpdKUUl2s7NNmiU";
-    $Callback_URL = "http://www.roroku.shop/Twitter_AffiliateBlocker/callback.php";
+    $Callback_URL = "https://roroku.shop/Twitter_AffiliateBlocker/callback.php";
 
     $connection = new TwitterOAuth($ConsumerKey,$ConsumerSecret);
 
