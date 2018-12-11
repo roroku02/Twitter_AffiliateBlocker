@@ -66,6 +66,31 @@
 .scroll-box ul {
     margin: 0;
 }
+
+.contact {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 300px;
+    background-color: rgb(39, 134, 228);
+}
+
+.contact .contact-twitter {
+    width: 500px;
+    border: 1px solid white;
+    border-radius: 8px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.contact .contact-twitter:hover {
+    opacity: .5;
+}
+
 .main_container {
     max-width: 1000px;
     margin: 30px auto;

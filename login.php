@@ -44,5 +44,13 @@
             </div>
         </div>
     </section>
+    <section class="contact">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <a href="https://twitter.com/roroku02" alt="Twitter|roroku02" class="contact-twitter">
+                <h3>Twitter - @roroku02</h3>
+            </a>
+        </div>
+    </section>
 </body>
 </html>
