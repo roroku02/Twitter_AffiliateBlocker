@@ -31,12 +31,14 @@
     $block_words = ["稼ぐ","起業","投資","月収","年収","収入","勝手にお金","副業","ハイローオーストラリア","バイオプ"];
     
     //ユーザ抽出
-    for($user_count = 0;$user_count < count($f_user['name']);$user_count++){
-        foreach($block_words as $block_word){
-            if(strpos($f_user['description'][$user_count],$block_word)){
-                $block_user{'name'}[] = $f_user['name'][$user_count];
-                $block_user{'screen_name'}[] = $f_user{'screen_name'}[$user_count];
-                $block_user{'description'}[] = $f_user{'description'}[$user_count];
+    if(isset($f_user['name'])){
+        for($user_count = 0;$user_count < count($f_user['name']);$user_count++){
+            foreach($block_words as $block_word){
+                if(strpos($f_user['description'][$user_count],$block_word)){
+                    $block_user{'name'}[] = $f_user['name'][$user_count];
+                    $block_user{'screen_name'}[] = $f_user{'screen_name'}[$user_count];
+                    $block_user{'description'}[] = $f_user{'description'}[$user_count];
+                }
             }
         }
     }
