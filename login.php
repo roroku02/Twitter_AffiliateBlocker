@@ -33,13 +33,34 @@
             <a href="<?php echo $Url; ?>">Login</a>
         </div>
     </section>
+    <section class="howto">
+        <h2>使い方</h2>
+        <div class="container">
+            <div class="step">
+                <h3>Step1.</h3>
+                <img src="./image/step1.png" alt="step1">
+                <p>まずはログインボタンをクリック！</p>
+            </div>
+            <div class="step">
+                <h3>Step2.</h3>
+                <img src="./image/step2.png" alt="step2">
+                <p>TwitterのIDとパスワードを入力し、「連携アプリを認証」ボタンをクリック！</p>
+            </div>
+            <div class="step">
+                <h3>Step3.</h3>
+                <img src="./image/step3.png" alt="step3">
+                <p>あなたのフォロワーからアフィリエイトユーザが検索され、表示されます！<br>
+                「一括ブロック」ボタンでそんなユーザーからおさらばです！</p>
+            </div>
+        </div>
+    </section>
     <section class="log">
         <div class="container">
             <h2>更新履歴</h2>
             <div class="scroll-box">
                 <ul>
-                    <li>2018-12-10:ページ公開</li>
                     <li>2018-12-11:ログインページをリニューアル</li>
+                    <li>2018-12-10:ページ公開</li>
                 </ul>
             </div>
         </div>

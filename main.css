@@ -45,6 +45,43 @@
     background-color: rgba(100, 100, 0, 0.7);
 }
 
+.howto {
+    background-color: rgb(153, 93, 209);
+    color: white;
+    margin: 0;
+    text-align: center;
+    min-height: 500px;
+}
+
+h2 {
+    margin: 0;
+    padding: 50px;
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.7em;
+}
+
+.howto .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.step {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid darkgray;
+    border-radius: 8px;
+    flex: 1 1 500px;
+}
+
+.howto .step img {
+    width: 500px;
+    border-radius: 8px;
+}
+
 .log {
     background-color: #7C7D7E;
     margin: 0;
@@ -56,11 +93,13 @@
 }
 
 .scroll-box {
-    width: 720px;
-    height: 150px;
+    width: 760px;
+    height: 300px;
     overflow: scroll;
-    white-space: nowrap;
+    white-space: nowrwap;
     border: 1px solid white;
+    font-size: 1.7em;
+    margin-bottom: 50px;
 }
 
 .scroll-box ul {
@@ -85,15 +124,22 @@
     text-decoration: none;
     text-align: center;
     color: white;
+    font-size: 1.7em;
+    margin-bottom: 50px;
 }
 
 .contact .contact-twitter:hover {
     opacity: .5;
 }
 
+.login_body h2 {
+    text-align: center;
+}
+
 .main_container {
     max-width: 1000px;
     margin: 30px auto;
+    text-align: center;
 }
 
 .t_user {
@@ -129,9 +175,6 @@
     background-color: rgba(189, 234, 255, 0.205);
 }
 
-p {
-    text-align: center;
-}
 
 #block_button {
     display: flex;
