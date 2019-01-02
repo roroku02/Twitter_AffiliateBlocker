@@ -76,11 +76,13 @@
             echo "<p>あなたのアカウントのフォロワーから以下の通りアフィリエイトアカウントとみられるユーザを発見しました</p>";
 
             //テーブル生成
+            echo '<div class="scroll-table">';
             echo '<table class="t_user"><tr><th id = "name">ユーザ名</th><th id ="id">ユーザID</th><th id = "des">プロフィール</th></tr>';
             for($i = 0;$i < count($block_user['name']);$i++){
                 echo "<tr><td>".$block_user['name'][$i]."</td><td>@".$block_user['screen_name'][$i]."</td><td>".$block_user['description'][$i]."</td></tr>";
             }
             echo '</table>';
+            echo '</div>';
             echo '<br /><br />';
 
             //ブロックボタン

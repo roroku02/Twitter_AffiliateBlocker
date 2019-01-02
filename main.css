@@ -26,7 +26,16 @@
 }
 
 .login_container p, .login_container a {
-    font-size: 30px;
+    font-size: 5vw;    
+}
+
+@media (min-width: 1000px) {
+    .login_container h1 {
+        font-size: 96px;
+    }
+    .login_container p, .login_container a {
+        font-size: 30px;
+    }
 }
 
 .login_container a {
@@ -56,11 +65,11 @@
 h2 {
     margin: 0;
     padding: 50px;
-    font-size: 3em;
+    font-size: 45px;
 }
 
 p {
-    font-size: 1.7em;
+    font-size: 30px;
 }
 
 .howto .container {
@@ -142,10 +151,22 @@ p {
     text-align: center;
 }
 
+.main_container p {
+    font-size: 20px;
+}
+
+.scroll-table {
+    max-width: 768px;
+    overflow: scroll;
+    margin: 0 auto;
+}
+
 .t_user {
-    width: 760px;
+    width: 750px;
     margin: 20px auto;
     border-radius: 8px;
+    overflow: scroll;
+    white-space: nowrwap;
 }
 
 .t_user #name {
